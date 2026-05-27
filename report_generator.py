@@ -15,28 +15,28 @@ class ReportGenerator:
         filename = f"report_{attacker_ip}_{datetime.now().strftime('%Y%m%d_%H%M%S')}.md"
         filepath = os.path.join(self.output_dir, filename)
         
-        report = f"""# 🛡️ MIRAGE Forensic Report
+        report = f"""#  MIRAGE Forensic Report
 ## Incident: {attacker_ip}
 **Date du rapport :** {datetime.now().isoformat()}
 
 ---
 
-### 📊 Résumé de l'attaquant
+###  Résumé de l'attaquant
 - **IP :** {attacker_ip}
 - **Première activité :** {profile['first_activity']}
 - **Dernière activité :** {profile['last_activity']}
 - **Nombre d'événements :** {profile['total_events']}
 - **Score de risque :** {profile['risk_score']}/100
 
-### 🎯 Tactiques MITRE ATT&CK Détectées
+###  Tactiques MITRE ATT&CK Détectées
 {self._format_list(profile['detected_tactics'])}
 
-### 🛠️ Techniques Utilisées
+###  Techniques Utilisées
 {self._format_list(profile['techniques'])}
 
 ---
 
-### ⏳ Timeline de l'attaque
+###  Timeline de l'attaque
 | Timestamp | Composant | Action | MITRE |
 |-----------|-----------|--------|-------|
 """

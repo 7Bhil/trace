@@ -14,7 +14,7 @@ class TraceOrchestrator:
         self.db = self.profiler.db
 
     def profile_and_report(self, attacker_ip):
-        print(f"[*] 🕵️ MIRAGE TRACE : Analyse de l'attaquant {attacker_ip}...")
+        print(f"[*]  MIRAGE TRACE : Analyse de l'attaquant {attacker_ip}...")
         
         # 1. Profiling
         profile = self.profiler.analyze_attacker(attacker_ip)
@@ -40,7 +40,7 @@ class TraceOrchestrator:
 
     def start_daemon(self):
         """Lance Trace en mode écoute pour générer des rapports à la demande"""
-        print(f"[*] 🕵️ MIRAGE TRACE : Démon d'analyse lancé.")
+        print(f"[*]  MIRAGE TRACE : Démon d'analyse lancé.")
         self.running = True
         
         # Lancer le heartbeat
